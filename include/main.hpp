@@ -4,7 +4,7 @@
 #include "test.hpp"
 
 int main(){
-    std::cout << test() << std::endl;
+    std::cout << foo() << std::endl;
     return 0;
 }
 
