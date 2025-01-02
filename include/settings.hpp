@@ -1,5 +1,5 @@
-#ifndef TEST_HPP
-#define TEST_HPP
+#ifndef SETTINGS_HPP
+#define SETTINGS_HPP
 
 #include <unordered_map>
 #include <string>
