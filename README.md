@@ -17,3 +17,6 @@ make test      # Builds the unit tests
 ```bash
 make clean  # Cleans up build files
 ```
+
+# Credits
+Testing framework: [Catch2](https://github.com/catchorg/Catch2) (licensed under the Boost Software License)
