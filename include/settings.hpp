@@ -7,7 +7,25 @@
 #include <iostream>
 
 class Settings {
+
+protected:
+    // Protected constructor to enforce singleton pattern
+    Settings(){}
+
+    // Static pointer to the single instance
+    static inline Settings* settings_ = nullptr;
 public:
+    // Delete copy constructor and assignment operator
+    Settings(Settings &other) = delete;
+    void operator=(const Settings &) = delete;
+
+    // Public method to access the singleton instance
+    static Settings* get_instance() {
+        if (settings_ == nullptr) {
+            settings_ = new Settings();
+        }
+        return settings_;
+    }
 
     void load_settings(){
         std::string config_line;
@@ -42,6 +60,8 @@ public:
             return _settings[key];
         }
     }
+
+Settings* Settings::settings_= nullptr;
 
 private:
     std::unordered_map<std::string, int> _settings;
