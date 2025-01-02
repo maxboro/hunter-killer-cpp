@@ -2,9 +2,10 @@
 #define TEST_HPP
 
 #include <iostream>
+#include <string>
 
-void test(){
-    std::cout << "Test" << std::endl;
+std::string foo(){
+    return "Test";
 }
 
 #endif
