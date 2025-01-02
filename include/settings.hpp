@@ -39,7 +39,7 @@ public:
         if (_settings.find(key) == _settings.end()){
             throw std::runtime_error("Key: " + key + " is not in settings");
         } else {
-            return _settings["key"];
+            return _settings[key];
         }
     }
 
