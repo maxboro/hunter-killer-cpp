@@ -14,7 +14,7 @@ SRC = main.cpp
 TARGET = $(BIN_DIR)/game
 
 # Test files
-TEST_SRC = $(wildcard $(TEST_DIR)/*.cpp) external/catch_amalgamated.cpp  # All .cpp files in the tests directory
+TEST_SRC = $(wildcard $(TEST_DIR)/*.cpp) external/catch2/catch_amalgamated.cpp  # All .cpp files in the tests directory
 TEST_TARGET = $(BIN_DIR)/tests
 
 # Rule to build the final program

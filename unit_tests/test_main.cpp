@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../external/catch_amalgamated.hpp"
+#include "../external/catch2/catch_amalgamated.hpp"
 #include "../include/test.hpp"
 
 TEST_CASE("Example test", "[example]") {
