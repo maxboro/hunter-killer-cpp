@@ -61,8 +61,6 @@ public:
         }
     }
 
-Settings* Settings::settings_= nullptr;
-
 private:
     std::unordered_map<std::string, int> _settings;
 
