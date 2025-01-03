@@ -53,7 +53,7 @@ public:
         std::cout << "Settings are loaded." << std::endl;
     }
 
-    int get_value(std::string key){
+    int get_value(const std::string& key){
         if (_settings.find(key) == _settings.end()){
             throw std::runtime_error("Key: " + key + " is not in settings");
         } else {
