@@ -20,7 +20,7 @@ public:
     void operator=(const Settings &) = delete;
 
     // Public method to access the singleton instance
-    static Settings* get_instance() {
+    static inline Settings* get_instance() {
         if (settings_ == nullptr) {
             settings_ = new Settings();
         }
