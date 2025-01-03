@@ -3,8 +3,8 @@ Simulation of one hunter and one or multiple prey. C++ version of [hunter-killer
 # How to run
 #### Simulation:
 ```bash
-make        # Builds the project
-./bin/game  # Runs the executable
+make           # Builds the project
+./bin/game     # Runs the executable
 ```
 
 #### Unit tests:
@@ -15,7 +15,7 @@ make test      # Builds the unit tests
 
 #### Clean:
 ```bash
-make clean  # Cleans up build files
+make clean     # Cleans up build files
 ```
 
 # Credits
