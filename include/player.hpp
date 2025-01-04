@@ -3,6 +3,8 @@
 
 #include <string>
 #include <unordered_set>
+#include <sstream>
+#include <ostream>
 #include "../include/location.hpp"
 #include "../include/utils_random.hpp"
 
@@ -61,6 +63,20 @@ public:
     void random_move(){
         Move move_to_exec = static_cast<Move>(random_uniform_int(Up, Pass));
         move(move_to_exec);
+    }
+
+    // Overload <<
+    friend std::ostream& operator<<(std::ostream& os, const Player& obj) {
+        std::string alive_str = (obj._is_alive)? "Alive" : "Dead";
+        os << obj._name <<  " at " << obj._location << ". " << alive_str;
+        return os;
+    }
+
+    // string representation
+    std::string to_str() const {
+        std::ostringstream oss;
+        oss << *this;
+        return oss.str();
     }
 
 protected:
