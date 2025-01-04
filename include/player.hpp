@@ -3,7 +3,6 @@
 
 #include <string>
 #include <unordered_set>
-#include <cassert>
 #include "../include/location.hpp"
 
 class Player {
@@ -16,7 +15,9 @@ public:
     bool is_alive() const {return _is_alive;}
 
     void move(std::string where){
-        assert(_possible_moves.contains(where));
+        if (!_possible_moves.contains(where)){
+            throw std::runtime_error("Wrong move: " + where);
+        }
     }
 
 protected:
