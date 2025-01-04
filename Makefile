@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = g++
-CFLAGS = -Wall -g -Iinclude -Iexternal -O3  # Add -Iexternal for Catch2
+CFLAGS = -Wall -g -Iinclude -Iexternal -O3 -std=c++20 # Add -Iexternal for Catch2
 
 # Directories
 INC_DIR = include
