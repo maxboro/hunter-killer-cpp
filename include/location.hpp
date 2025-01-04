@@ -11,6 +11,9 @@ public:
     int get_x() const {return _x;}
     int get_y() const {return _y;}
 
+    void update_x(int increment){_x += increment;}
+    void update_y(int increment){_y += increment;}
+
     // Overloading ==
     bool operator==(const Location& other) const {
         return _x == other.get_x() && _y == other.get_y();
