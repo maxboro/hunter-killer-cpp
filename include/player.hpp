@@ -12,7 +12,7 @@ class Player {
 public:
     Player(std::string name, Location location): _name(name), _location(location) {
         _is_alive = true;
-    };
+    }
 
     bool is_alive() const {return _is_alive;}
 
