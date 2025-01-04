@@ -20,6 +20,10 @@ public:
         return _location;
     }
 
+    std::string get_name() const {
+        return _name;
+    }
+
     void move(Move where){
         Location new_potential_location = _location;
         switch (where){

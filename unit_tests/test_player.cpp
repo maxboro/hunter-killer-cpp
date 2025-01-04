@@ -33,3 +33,11 @@ TEST_CASE("Hunter random move", "[Hunter]") {
     Hunter hunter = Hunter(name, loc);
     REQUIRE_NOTHROW(hunter.random_move());
 }
+
+TEST_CASE("Hunter name get", "[Hunter]") {
+    std::string name = "hunter";
+    Location loc = Location(1, 1);
+    Hunter hunter = Hunter(name, loc);
+    std::string name_get = hunter.get_name();
+    REQUIRE(name_get == "hunter");
+}
