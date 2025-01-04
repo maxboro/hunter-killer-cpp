@@ -24,6 +24,19 @@ public:
         return _name;
     }
 
+    char get_sign() const {
+        return _sign;
+    }
+
+    void kill() {
+        if (_is_alive){
+            _is_alive = false;
+            _sign = 'X';
+        } else {
+            throw std::runtime_error(_name + " is already dead");
+        }
+    }
+
     void move(Move where){
         Location new_potential_location = _location;
         switch (where){
@@ -54,19 +67,23 @@ protected:
     std::string _name;
     Location _location;
     bool _is_alive;
-    char sign;
+    char _sign;
     std::unordered_set<std::string> _possible_moves;
     // _moves;
 };
 
 class Hunter: public Player {
 public:
-    Hunter(std::string name, Location location): Player(name, location) {};
+    Hunter(std::string name, Location location): Player(name, location) {
+        _sign = 'H';
+    }
 };
 
 class Prey: public Player {
 public:
-    Prey(std::string name, Location location): Player(name, location) {};
+    Prey(std::string name, Location location): Player(name, location) {
+        _sign = 'P';
+    }
 };
 
 #endif
