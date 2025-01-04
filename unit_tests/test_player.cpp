@@ -4,28 +4,25 @@
 
 TEST_CASE("Hunter creation", "[Hunter]") {
     std::string name = "hunter";
-    Location loc1 = Location(1, 1);
-    Hunter hunter = Hunter(name, loc1);
+    Location loc = Location(1, 1);
+    Hunter hunter = Hunter(name, loc);
     REQUIRE(hunter.is_alive());
 }
 
 TEST_CASE("Prey creation", "[Prey]") {
     std::string name = "Prey";
-    Location loc1 = Location(1, 1);
-    Prey prey = Prey(name, loc1);
+    Location loc = Location(1, 1);
+    Prey prey = Prey(name, loc);
     REQUIRE(prey.is_alive());
-}
-
-TEST_CASE("Hunter wrong move", "[Hunter]") {
-    std::string name = "hunter";
-    Location loc1 = Location(1, 1);
-    Hunter hunter = Hunter(name, loc1);
-    REQUIRE_THROWS(hunter.move("upp"));
 }
 
 TEST_CASE("Hunter allowed move", "[Hunter]") {
     std::string name = "hunter";
-    Location loc1 = Location(1, 1);
-    Hunter hunter = Hunter(name, loc1);
-    REQUIRE_NOTHROW(hunter.move("up"));
+    Location loc = Location(1, 1);
+    Hunter hunter = Hunter(name, loc);
+    REQUIRE_NOTHROW(hunter.move(Up));
+
+    Location loc_new = hunter.get_location();
+    REQUIRE(loc_new.get_x() == 1);
+    REQUIRE(loc_new.get_y() == 0);
 }
