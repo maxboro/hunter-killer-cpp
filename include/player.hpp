@@ -4,6 +4,7 @@
 #include <string>
 #include <unordered_set>
 #include "../include/location.hpp"
+#include "../include/utils_random.hpp"
 
 enum Move { Up, Down, Left, Right, Pass };
 
@@ -38,6 +39,11 @@ public:
                 break;
         }
         _location = new_potential_location;
+    }
+
+    void random_move(){
+        Move move_to_exec = static_cast<Move>(random_uniform_int(Up, Pass));
+        move(move_to_exec);
     }
 
 protected:

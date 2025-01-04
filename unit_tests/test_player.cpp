@@ -26,3 +26,10 @@ TEST_CASE("Hunter allowed move", "[Hunter]") {
     REQUIRE(loc_new.get_x() == 1);
     REQUIRE(loc_new.get_y() == 0);
 }
+
+TEST_CASE("Hunter random move", "[Hunter]") {
+    std::string name = "hunter";
+    Location loc = Location(1, 1);
+    Hunter hunter = Hunter(name, loc);
+    REQUIRE_NOTHROW(hunter.random_move());
+}
