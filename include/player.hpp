@@ -74,7 +74,7 @@ protected:
 
 class Hunter: public Player {
 public:
-    Hunter(std::string name, Location location): Player(name, location) {
+    Hunter(Location location): Player("Hunter", location) {
         _sign = 'H';
     }
 };

@@ -3,9 +3,8 @@
 #include "../include/location.hpp"
 
 TEST_CASE("Hunter creation and kill", "[Hunter]") {
-    std::string name = "hunter";
     Location loc = Location(1, 1);
-    Hunter hunter = Hunter(name, loc);
+    Hunter hunter = Hunter(loc);
     REQUIRE(hunter.is_alive());
     REQUIRE(hunter.get_sign() == 'H');
 
@@ -29,9 +28,8 @@ TEST_CASE("Prey creation and kill", "[Prey]") {
 }
 
 TEST_CASE("Hunter allowed move", "[Hunter]") {
-    std::string name = "hunter";
     Location loc = Location(1, 1);
-    Hunter hunter = Hunter(name, loc);
+    Hunter hunter = Hunter(loc);
     REQUIRE_NOTHROW(hunter.move(Up));
 
     Location loc_new = hunter.get_location();
@@ -40,16 +38,14 @@ TEST_CASE("Hunter allowed move", "[Hunter]") {
 }
 
 TEST_CASE("Hunter random move", "[Hunter]") {
-    std::string name = "hunter";
     Location loc = Location(1, 1);
-    Hunter hunter = Hunter(name, loc);
+    Hunter hunter = Hunter(loc);
     REQUIRE_NOTHROW(hunter.random_move());
 }
 
 TEST_CASE("Hunter name get", "[Hunter]") {
-    std::string name = "hunter";
     Location loc = Location(1, 1);
-    Hunter hunter = Hunter(name, loc);
+    Hunter hunter = Hunter(loc);
     std::string name_get = hunter.get_name();
-    REQUIRE(name_get == "hunter");
+    REQUIRE(name_get == "Hunter");
 }
