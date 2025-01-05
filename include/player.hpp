@@ -61,7 +61,7 @@ public:
     }
 
     void random_move(){
-        Move move_to_exec = static_cast<Move>(random_uniform_int(Up, Pass));
+        Move move_to_exec = static_cast<Move>(random_uniform_int(Move::Up, Move::Pass));
         move(move_to_exec);
     }
 
