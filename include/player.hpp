@@ -84,7 +84,6 @@ protected:
     Location _location;
     bool _is_alive;
     char _sign;
-    std::unordered_set<std::string> _possible_moves;
     // _moves;
 };
 
