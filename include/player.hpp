@@ -84,7 +84,6 @@ protected:
     Location _location;
     bool _is_alive;
     char _sign;
-    // _moves;
 };
 
 class Hunter: public Player {
