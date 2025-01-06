@@ -38,3 +38,19 @@ TEST_CASE("Location string representation", "[Location]") {
     std::string loc1_repr = loc1.to_str();
     REQUIRE(loc1_repr == "Loc[1; 2]");
 }
+
+TEST_CASE("Location change x", "[Location]") {
+    Location loc1 = Location(1, 2);
+    loc1.update_x(1);
+
+    REQUIRE(loc1.get_x() == 2);
+    REQUIRE(loc1.get_y() == 2);
+}
+
+TEST_CASE("Location change y", "[Location]") {
+    Location loc1 = Location(1, 2);
+    loc1.update_y(1);
+
+    REQUIRE(loc1.get_x() == 1);
+    REQUIRE(loc1.get_y() == 3);
+}
