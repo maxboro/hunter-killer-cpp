@@ -45,19 +45,19 @@ public:
     void move(Move where){
         Location new_potential_location = _location;
         switch (where){
-            case Left:
+            case Move::Left:
                 new_potential_location.update_x(-1);
                 break;
-            case Right:
+            case Move::Right:
                 new_potential_location.update_x(1);
                 break;
-            case Up:
+            case Move::Up:
                 new_potential_location.update_y(-1);
                 break;
-            case Down:
+            case Move::Down:
                 new_potential_location.update_y(1);
                 break;
-            case Pass:
+            case Move::Pass:
                 break;
         }
         _location = new_potential_location;

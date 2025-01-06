@@ -36,7 +36,7 @@ TEST_CASE("Prey creation and kill", "[Prey]") {
 TEST_CASE("Hunter allowed move", "[Hunter]") {
     Location loc = Location(1, 1);
     Hunter hunter = Hunter(loc);
-    REQUIRE_NOTHROW(hunter.move(Up));
+    REQUIRE_NOTHROW(hunter.move(Move::Up));
 
     Location loc_new = hunter.get_location();
     REQUIRE(loc_new.get_x() == 1);
