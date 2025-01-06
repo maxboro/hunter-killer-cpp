@@ -10,11 +10,14 @@
 
 enum Move { Up, Down, Left, Right, Pass };
 
+// game agent base class
 class Player {
 public:
     Player(std::string name, Location location): _name(name), _location(location) {
         _is_alive = true;
     }
+
+    virtual ~Player() = default;
 
     bool is_alive() const {return _is_alive;}
 
