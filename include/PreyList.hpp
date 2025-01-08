@@ -10,12 +10,12 @@ public:
         _prey_list = {};
     }
 
-    void add(Prey prey){
+    void add(const Prey& prey){
         _prey_list.push_back(prey);
     }
 
     void random_move(){
-        for (Prey prey : _prey_list){
+        for (Prey& prey : _prey_list){
             prey.random_move();
         }
     }
