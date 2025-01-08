@@ -14,6 +14,7 @@ TEST_CASE("PreyList add", "[PreyList]") {
     Prey prey = Prey(name, loc);
     PreyList prey_list = PreyList();
     REQUIRE_NOTHROW(prey_list.add(prey));
+    REQUIRE(prey_list.get_size() == 1);
 }
 
 TEST_CASE("PreyList random move", "[PreyList]") {

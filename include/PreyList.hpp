@@ -20,6 +20,10 @@ public:
         }
     }
 
+    int get_size() const {
+        return _prey_list.size();
+    }
+
 private:
     std::vector<Prey> _prey_list;
 };
