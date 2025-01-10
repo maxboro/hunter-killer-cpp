@@ -1,7 +1,7 @@
 #include <string>
 #include "../external/catch2/catch_amalgamated.hpp"
 #include "../include/player.hpp"
-#include "../include/PreyList.hpp"
+#include "../include/prey_list.hpp"
 
 
 TEST_CASE("PreyList creation", "[PreyList]") {
