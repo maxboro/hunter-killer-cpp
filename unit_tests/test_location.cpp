@@ -1,5 +1,12 @@
 #include "../external/catch2/catch_amalgamated.hpp"
 #include "../include/location.hpp"
+#include "../include/settings.hpp"
+
+Settings* settings = Settings::get_instance();
+
+TEST_CASE("Settings initialization", "[Settings]") {
+    settings->load_settings();
+}
 
 TEST_CASE("Location creation", "[Location]") {
     int x = 1;
