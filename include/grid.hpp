@@ -18,12 +18,6 @@ public:
         _grid = std::vector<std::vector<char>>(_size_x, std::vector<char>(_size_y, ' '));
     }
 
-    void check_coords(int coord_x, int coord_y) const {
-        if (coord_x < 0 || coord_x >= _size_x || coord_y < 0 || coord_y >= _size_y) {
-            throw std::out_of_range("Coordinates out of bounds.");
-        }
-    }
-
     void set_cell_value(int coord_x, int coord_y, char sign){
         check_coords(coord_x, coord_y);
         _grid[coord_y][coord_x] = sign;
@@ -55,6 +49,12 @@ private:
     const int _size_x;
     const int _size_y;
     std::vector<std::vector<char>> _grid;
+
+    void _check_coords(int coord_x, int coord_y) const {
+        if (coord_x < 0 || coord_x >= _size_x || coord_y < 0 || coord_y >= _size_y) {
+            throw std::out_of_range("Coordinates out of bounds.");
+        }
+    }
 };
 
 #endif

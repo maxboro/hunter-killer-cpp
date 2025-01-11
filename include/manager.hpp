@@ -5,18 +5,10 @@
 
 class Manager{
 public:
-    Manager(Game game, Settings* settings): 
+    Manager(Game& game, Settings* settings): 
         _game(game),  
         _settings(settings){};
 
-
-    void _add_prey(){
-        const int n_prey = _settings->get_value("n_prey");
-        for (int prey_id = 0; prey_id < n_prey; prey_id++){
-            std::string prey_name = "Prey_" + std::to_string(prey_id);
-            _game.add_prey(prey_name);
-        }
-    }
     void run_game(){
         _add_prey();
 
@@ -31,6 +23,14 @@ public:
 private:
     Game _game;
     Settings* _settings;
+
+    void _add_prey(){
+        const int n_prey = _settings->get_value("n_prey");
+        for (int prey_id = 0; prey_id < n_prey; prey_id++){
+            std::string prey_name = "Prey_" + std::to_string(prey_id);
+            _game.add_prey(prey_name);
+        }
+    }
 };
 
 #endif

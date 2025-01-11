@@ -32,6 +32,31 @@ public:
         _prey_list.add(new_prey);
     }
 
+    void show_status() const {
+        for (const Prey& prey : _prey_list){
+            std::cout << prey << std::endl;
+        }
+
+        std::cout << _hunter << std::endl;
+
+        if (_to_show_grid){
+            _show_grid();
+        }
+    }
+
+    void make_move(){
+        _prey_list.random_move();
+        _hunter.random_move();
+        _perform_killings();
+    }
+
+private:
+    Settings* _settings;
+    bool _to_show_grid;
+    Grid _grid;
+    PreyList _prey_list;
+    Hunter _hunter;
+
     void _show_grid() const {
         Grid populated_grid = _grid;
 
@@ -50,18 +75,6 @@ public:
         populated_grid.show_grid();
     }
 
-    void show_status() const {
-        for (const Prey& prey : _prey_list){
-            std::cout << prey << std::endl;
-        }
-
-        std::cout << _hunter << std::endl;
-
-        if (_to_show_grid){
-            _show_grid();
-        }
-    }
-
     // Kill prey if possible
     void _perform_killings(){
         Location hunter_current_location = _hunter.get_location();
@@ -72,19 +85,6 @@ public:
             }
         }
     }
-
-    void make_move(){
-        _prey_list.random_move();
-        _hunter.random_move();
-        _perform_killings();
-    }
-
-private:
-    Settings* _settings;
-    bool _to_show_grid;
-    Grid _grid;
-    PreyList _prey_list;
-    Hunter _hunter;
 };
 
 #endif
