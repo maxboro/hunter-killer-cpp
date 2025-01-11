@@ -43,24 +43,24 @@ public:
     }
 
     void move(Move where){
-        Location new_potential_location = _location;
-        switch (where){
-            case Move::Left:
-                new_potential_location.update_x(-1);
-                break;
-            case Move::Right:
-                new_potential_location.update_x(1);
-                break;
-            case Move::Up:
-                new_potential_location.update_y(-1);
-                break;
-            case Move::Down:
-                new_potential_location.update_y(1);
-                break;
-            case Move::Pass:
-                break;
+        if (_is_alive){
+            switch (where){
+                case Move::Left:
+                    _location.update_x(-1);
+                    break;
+                case Move::Right:
+                    _location.update_x(1);
+                    break;
+                case Move::Up:
+                    _location.update_y(-1);
+                    break;
+                case Move::Down:
+                    _location.update_y(1);
+                    break;
+                case Move::Pass:
+                    break;
+            }
         }
-        _location = new_potential_location;
     }
 
     void random_move(){

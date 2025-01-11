@@ -24,6 +24,14 @@ public:
         return _prey_list.size();
     }
 
+    // Iterator access methods
+    auto begin() { return _prey_list.begin(); }
+    auto end() { return _prey_list.end(); }
+    auto begin() const { return _prey_list.begin(); }
+    auto end() const { return _prey_list.end(); }
+    auto cbegin() const { return _prey_list.cbegin(); }
+    auto cend() const { return _prey_list.cend(); }
+
 private:
     std::vector<Prey> _prey_list;
 };
