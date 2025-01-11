@@ -37,6 +37,8 @@ public:
         if (_is_alive){
             _is_alive = false;
             _sign = 'X';
+        } else {
+            throw std::runtime_error(_name + " is already dead");
         }
     }
 

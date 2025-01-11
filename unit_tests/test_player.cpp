@@ -13,6 +13,8 @@ TEST_CASE("Hunter creation and kill", "[Hunter]") {
     hunter.kill();
     REQUIRE(hunter.get_sign() == 'X');
     REQUIRE(hunter.to_str() == "Hunter at Loc[1; 1]. Dead");
+
+    REQUIRE_THROWS_AS(hunter.kill(), std::runtime_error);
 }
 
 TEST_CASE("Prey creation and kill", "[Prey]") {
@@ -27,6 +29,8 @@ TEST_CASE("Prey creation and kill", "[Prey]") {
     prey.kill();
     REQUIRE(prey.get_sign() == 'X');
     REQUIRE(prey.to_str() == "Prey at Loc[1; 1]. Dead");
+
+    REQUIRE_THROWS_AS(prey.kill(), std::runtime_error);
 }
 
 TEST_CASE("Hunter allowed move", "[Hunter]") {

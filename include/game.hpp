@@ -66,7 +66,7 @@ public:
     void _perform_killings(){
         Location hunter_current_location = _hunter.get_location();
         for (Prey& prey : _prey_list){
-            if (prey.get_location() == hunter_current_location){
+            if (prey.get_location() == hunter_current_location && prey.is_alive()){
                 prey.kill();
                 std::cout << prey.get_name() << " is killed." << std::endl;
             }
