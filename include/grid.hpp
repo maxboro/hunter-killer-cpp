@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 #include <string>
+#include <sstream>
 
 class Grid {
 public:
@@ -13,37 +15,45 @@ public:
         _grid(size_x, std::vector<char>(size_y, ' ')){};
 
     void set_empty_grid(){
-        _grid = std::vector(_size_x, std::vector<char>(_size_y, ' '));
+        _grid = std::vector<std::vector<char>>(_size_x, std::vector<char>(_size_y, ' '));
+    }
+
+    void check_coords(int coord_x, int coord_y) const {
+        if (coord_x < 0 || coord_x >= _size_x || coord_y < 0 || coord_y >= _size_y) {
+            throw std::out_of_range("Coordinates out of bounds.");
+        }
     }
 
     void set_cell_value(int coord_x, int coord_y, char sign){
+        check_coords(coord_x, coord_y);
         _grid[coord_y][coord_x] = sign;
     }
 
     char get_cell_value(int coord_x, int coord_y) const {
+        check_coords(coord_x, coord_y);
         return _grid[coord_y][coord_x];
     }
 
-    std::string get_grid() const {
-        std::string grid_str = "";
-        for (auto& line : _grid){
+    std::string to_string() const {
+        std::ostringstream grid_str;
+        for (const auto& line : _grid){
+            grid_str << "|";
             for (const char& el : line){
-                std::string el_cell = std::string(1, el) + "|";
-                grid_str = grid_str + el_cell;
+                grid_str << el <<  "|";
             }
-            grid_str += "\n";
+            grid_str << "\n";
         }
-        return grid_str;
+        return grid_str.str();
     }
 
     void show_grid() const {
-        std::string grid_str = get_grid();
+        std::string grid_str = to_string();
         std::cout << grid_str << std::endl;
     }
     
 private:
-    int _size_x;
-    int _size_y;
+    const int _size_x;
+    const int _size_y;
     std::vector<std::vector<char>> _grid;
 };
 
