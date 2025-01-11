@@ -19,12 +19,12 @@ public:
     }
 
     void set_cell_value(int coord_x, int coord_y, char sign){
-        check_coords(coord_x, coord_y);
+        _check_coords(coord_x, coord_y);
         _grid[coord_y][coord_x] = sign;
     }
 
     char get_cell_value(int coord_x, int coord_y) const {
-        check_coords(coord_x, coord_y);
+        _check_coords(coord_x, coord_y);
         return _grid[coord_y][coord_x];
     }
 
