@@ -20,8 +20,8 @@ public:
         };
     
     Location random_location_on_grid() const {
-        const int coord_x = random_uniform_int(0, _settings->get_value("grid_size_x"));
-        const int coord_y = random_uniform_int(0, _settings->get_value("grid_size_y"));
+        const int coord_x = random_uniform_int(0, _settings->get_value("grid_size_x") - 1);
+        const int coord_y = random_uniform_int(0, _settings->get_value("grid_size_y") - 1);
         Location random_location = Location(coord_x, coord_y);
         return random_location;
     }
