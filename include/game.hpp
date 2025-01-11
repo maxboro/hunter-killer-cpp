@@ -19,7 +19,7 @@ public:
            _to_show_grid = _settings->get_value("show_grid");
         };
     
-    Location random_location_on_grid() const {
+    Location random_location_on_grid() {
         const int coord_x = random_uniform_int(0, _settings->get_value("grid_size_x") - 1);
         const int coord_y = random_uniform_int(0, _settings->get_value("grid_size_y") - 1);
         Location random_location = Location(coord_x, coord_y);
