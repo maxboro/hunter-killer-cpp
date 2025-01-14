@@ -1,5 +1,7 @@
 # Description
-Simulation of one hunter and one or multiple prey. C++ version of [hunter-killer](https://github.com/maxboro/hunter-killer).
+Turn based simulation of one hunter and one or multiple prey. C++ version of [hunter-killer](https://github.com/maxboro/hunter-killer).
+
+The hunter and the prey move randomly to a nearby cell or pass their turn. The hunter kills the prey if they are in the same cell.
 # How to run
 #### Simulation:
 ```bash
@@ -17,6 +19,14 @@ make test      # Builds the unit tests
 ```bash
 make clean     # Cleans up build files
 ```
+# Settings
+In file `settings.txt` you can modify simulation parameters.
+- `n_prey` (int: default 2) - Number of prey
+- `n_steps` (int: default 20) - Number of simulation steps
+- `grid_size_x` (int: default 5) - Grid size in X dimension
+- `grid_size_y` (int: default 5) - Grid size in Y dimension
+- `show_grid` (int: default 1) - Flag to show grid (1/0)
+
 # Credits
 Testing framework: [Catch2](https://github.com/catchorg/Catch2) (licensed under the Boost Software License)
 
