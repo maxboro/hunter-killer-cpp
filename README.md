@@ -1,5 +1,7 @@
 # Description
-Simulation of one hunter and one or multiple prey. C++ version of [hunter-killer](https://github.com/maxboro/hunter-killer).
+Turn based simulation of one hunter and one or multiple prey. C++ version of [hunter-killer](https://github.com/maxboro/hunter-killer).
+
+The hunter and the prey move randomly to a nearby cell or pass their turn. The hunter kills the prey if they are in the same cell.
 # How to run
 #### Simulation:
 ```bash
